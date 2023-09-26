@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="https://i.pinimg.com/originals/d9/e4/ad/d9e4ad44e020a7f8a5e555a4d05745e3.jpg" class="d-block w-300" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h2 style="color: chartreuse;">Comenta tus aventuras..</h2>
+              
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://th.bing.com/th/id/R.e9917a8705fb1b469e6df6f4fca5a1a6?rik=va2A43eH2EUAAw&pid=ImgRaw&r=0" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h2 style="color:cyan;">tus viajes..</h2>
+              
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://th.bing.com/th/id/R.ac936a8847dc87b6300e8f5cef1769ae?rik=sdf6XFkGfXFiWg&pid=ImgRaw&r=0" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h2 style="color:gold;">Pueblos y paisajes que conociste</h2>
+             
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+    <div class="card">
+        <div class="card-body">
+
+
+            
+                
+           <b><i><u><h3 class="card-title">Lista de aventuras en motocicletas</h3></u></i></b>
+            
+
+
+
+            <a type="button" class="btn btn-success" href="/agregar">
+                Agregar aventuras
+            </a>
+            <br />
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Aventuras</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Eliminar</th>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    <% tareas.forEach((item)=>{ %>
+                        
+                        <tr>
+                            <th scope="row"><%= item.id %></th>
+                            <td><%= item.nombre%></td>
+                            <td><%= item.descripcion%></td>
+                            <td>
+                                <a type="button" class="btn btn-primary" href="/editar/<%= item.id %>">
+                                    Editar
+                                </button>
+                            </td>
+                            <td>
+                                <a type="button" class="btn btn-danger" href="/eliminar/<%= item.id %>">
+                                    Eliminar
+                                </button>
+                            </td>
+                            
+                        </tr>
+                    <% }) %>
+                </tbody>
+                
+                
+
+            </table>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
